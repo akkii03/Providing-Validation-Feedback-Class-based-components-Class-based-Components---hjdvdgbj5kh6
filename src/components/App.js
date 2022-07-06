@@ -4,23 +4,22 @@ import '../styles/App.css';
 class App extends Component {
     constructor(props) {
 		super(props);
-		// this.state ={
-		// 	para:""
-		// }
-		const [dis,setDis] = useState("");
-		handler = ()=>{
-			setDis("Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy");
-			console.log("btn was clicked");
+		this.state = {
+			para:""
 		}
+		
 	};
-
+	update() {
+		console.log("btn was clicked");	
+		this.setState({para:"Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy"})
+	}
 
 
     render() {
     	return(
 			<div id="main">
-			<button id="click" onClick={this.handler}>click</button>
-			<p id="para">{dis}</p>
+			<button id="click" onClick={()=>this.update()}>click</button>
+			<p id="para">{this.state.para}</p>
 			
 		</div>
     	);
