@@ -4,15 +4,14 @@ import '../styles/App.css';
 class App extends Component {
     constructor(props) {
 		super(props);
-		this.state = {
+		this.State = {
 			para:false
-
 		}
+		
 		
 	};
 	update() {
-		this.setState({para:true});
-		
+		this.setState({para:this.State.para=true});
 	}
 
 
@@ -20,7 +19,8 @@ class App extends Component {
     	return(
 			<div id="main">
 			<button id="click" onClick={()=>this.update()}>click</button>
-			{para?<p id="para">Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy</p>:null}
+			{this.State.para?<p id="para">Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy</p>:null}
+			
 		</div>
 		)
     }
